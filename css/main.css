@@ -1,0 +1,328 @@
+/* Thiết lập một số quy tắc chung cho tất cả các phần tử trong HTML, bao gồm cả Pseudo-elements */
+*,
+*::before,
+*::after {
+    /* Loại bỏ khoảng cách mặc định của phần tử */
+    margin: 0;
+    padding: 0;
+    /* Thiết lập kích thước hộp để bao gồm cả padding và border */
+    box-sizing: border-box;
+}
+
+html {
+    /* Làm mượt chuyển động khi trượt (scroll) */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Thiết lập font chữ mặc định cho toàn bộ dự án, 
+       với sans-serif là font dự phòng khi font chính ("Roboto") không khả dụng */
+    font-family: "Roboto", sans-serif;
+}
+
+img {
+    /* Đảm bảo tất cả hình ảnh trong dự án luôn phản hồi tốt (responsive),
+       không bị vỡ hoặc biến dạng khi thay đổi kích thước */
+    max-width: 100%;
+    width: 100%;
+}
+
+.container {
+    /* Giới hạn chiều rộng tối đa của nội dung để bố cục không quá rộng */
+    max-width: 1200px;
+    /* Giúp nội dung đáp ứng linh hoạt */
+    width: 100%;
+    /* Căn giữa nội dung của phần tử trong trường hợp chiều rộng nhỏ hơn max-width */
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* :root là một pseudo-class đặc biệt đại diện cho phần tử gốc của tài liệu (thường là thẻ <html>). 
+   Nó cho phép định nghĩa các biến CSS (Custom Properties) trên toàn bộ tài liệu */
+:root {
+    --green: #54B192;
+    --green-l: #A4cec0;
+    --gray: #3f3d56;
+    /* Định nghĩa một hiệu ứng chuyển đổi mượt mà trong 0.3 giây áp dụng cho toàn bộ elements */
+    --smooth: all .3s ease-in;
+}
+
+/* Thiết lập các thuộc tính chung cho tất cả các button */
+button {
+    text-align: center;
+    color: #fff;
+    background-color: var(--gray);
+    /* rem là đơn vị đo tỷ lệ dựa trên kích thước phông chữ gốc (thường là 16px).
+       1rem = 16px (mặc định), rem sẽ thay đổi theo kích thước của thẻ <html> */
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: var(--smooth);
+}
+
+button:hover {
+    /* Thay đổi màu nền khi hover vào button */
+    background-color: var(--green-l);
+    transition: var(--smooth);
+}
+
+/* === Header === */
+header {
+    /* Vị trí tuyệt đối sẽ thiết lập vị trí của phần tử dựa trên phần tử cha gần nhất */
+    position: absolute;
+    width: 100%;
+}
+
+.navbar {
+    /* Chuyển phần tử thành một hộp flex (flex container). 
+       Flexbox là một mô hình bố cục mạnh mẽ để căn chỉnh và phân phối không gian giữa các mục con của một phần tử.  
+       Đặt tất cả thành phần trên một hàng ngang */
+    display: flex;
+    /* Căn chỉnh nội dung bên trong thẻ cha */
+    justify-content: space-between;
+    /* Căn giữa theo chiều dọc */
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Logo */
+.navbar__logo img {
+    width: 57px;
+    height: 57px;
+    /* Giúp hình ảnh luôn bao phủ (cover) vùng chứa với kích thước khác nhau */
+    object-fit: cover;
+}
+
+/* Menu */
+.navbar__links {
+    /* Giúp class .navbar__links luôn nằm ở vị trí cố định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: var(--gray);
+    /* Đảm bảo class nằm trên các thành phần có chỉ số xếp chồng (z-index) thấp hơn */
+    z-index: 5;
+    /* Tạo hiệu ứng khi thay đổi trạng thái của các thuộc tính CSS */
+    transition: var(--smooth);
+    /* Ẩn navbar bằng cách dịch chuyển nó ra ngoài màn hình */
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+/* Phần tử có cả hai lớp .navbar__links và .navbar__open sẽ thay đổi */
+.navbar__links.navbar__open {
+    /* Khi click vào menuButton, JavaScript sẽ thêm lớp .navbar__open 
+       vào phần tử có lớp .navbar__links. Khi đó, các thuộc tính CSS sau sẽ được áp dụng */
+    transform: translateX(0);
+    opacity: 1;
+    transition: var(--smooth);
+}
+
+.navbar__link {
+    list-style: none;
+    margin: 55px;
+}
+
+.navbar__link a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    transition: var(--smooth);
+}
+
+.navbar__link a:hover {
+    color: var(--green);
+    transition: var(--smooth);
+}
+
+.navbar__btn {
+    font-size: 1rem;
+    background-color: var(--green);
+    margin-left: 45px;
+}
+
+/* Menu button */
+.navbar__icons {
+    display: flex;
+    /* Căn giữa cho phần tử */
+    justify-content: center;
+    /* Căn giữa cho nội dung theo chiều dọc */
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: var(--smooth);
+    z-index: 6;
+}
+
+.navbar__icon {
+    width: 45px;
+    height: 6px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    transition: var(--smooth);
+    /* Định vị phần tử dựa trên vị trí ban đầu của nó,
+       khi di chuyển vẫn giữ nguyên không gian của phần tử */
+    position: relative;
+}
+
+.navbar__icon::before,
+.navbar__icon::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 6px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    transition: var(--smooth);
+}
+
+.navbar__icon::before {
+    /* Dịch chuyển pseudo-element ::before lên trên */
+    transform: translateY(-12px);
+}
+
+.navbar__icon::after {
+    /* Dịch chuyển pseudo-element ::after xuống dưới */
+    transform: translateY(12px);
+}
+
+/* Hiệu ứng của button khi menu mở ra */
+/* Selector: .open là parent của .navbar__icon
+   Khi phần tử có lớp .open được thêm vào (bằng JavaScript khi click), 
+   các thuộc tính CSS dưới đây sẽ được áp dụng cho phần tử con .navbar__icon */
+.open .navbar__icon {
+    /* Khi nhấn vào menuButton và lớp .open được thêm vào parent,
+       .navbar__icon sẽ áp dụng các thuộc tính này */
+    transform: translateX(-50px);
+    background-color: transparent;
+}
+
+/* Khi phần tử parent có lớp .open, pseudo-element ::before của .navbar__icon sẽ thay đổi */
+.open .navbar__icon::before {
+    /* Xoay pseudo-element ::before 45 độ và dịch chuyển nó 35px theo trục X và -35px theo trục Y 
+       (giả sử tạo hiệu ứng để biến đổi hoặc di chuyển phần tử như một phần của thanh navigation) */
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+/* Khi phần tử parent có lớp .open, pseudo-element ::after của .navbar__icon sẽ thay đổi */
+.open .navbar__icon::after {
+    /* Xoay pseudo-element ::after -45 độ và dịch chuyển nó 35px theo trục X và 35px theo trục Y
+       (giả sử tạo hiệu ứng biến đổi phần tử thứ hai để tạo hiệu ứng menu đóng mở) */
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* Media Query: Đặt các kiểu CSS cho các màn hình có chiều rộng tối thiểu là 62em (992px) */
+@media (min-width:62em) {
+
+    /* Định dạng lại các thuộc tính CSS cho lớp .navbar__links */
+    .navbar__links {
+        /* Đặt lại vị trí từ `fixed` sang `initial` để hủy bỏ vị trí cố định */
+        position: initial;
+        /* Đặt lại trạng thái ban đầu cho transform để không di chuyển */
+        transform: translateX(0);
+        /* Thiết lập độ mờ của phần tử thành 1 (hoàn toàn hiển thị) */
+        opacity: 1;
+        /* Đặt nền cho phần tử thành trong suốt */
+        background-color: transparent;
+        /* Sử dụng Flexbox để hiển thị các liên kết của navbar trên cùng một hàng */
+        display: flex;
+        /* Căn chỉnh các mục con của navbar về phía cuối cùng bên phải */
+        justify-content: flex-end;
+        /* Căn giữa các mục con theo chiều dọc */
+        align-items: center;
+    }
+
+    /* Định dạng lại các thuộc tính cho các liên kết của lớp .navbar__link */
+    .navbar__link a {
+        /* Đặt màu văn bản thành biến CSS `--gray` */
+        color: var(--gray);
+    }
+
+    /* Định dạng lại các thuộc tính CSS cho lớp .navbar__icon */
+    .navbar__icon {
+        /* Ẩn biểu tượng menu icon (được sử dụng cho thiết bị di động) */
+        display: none;
+    }
+
+    /* Định dạng lại các thuộc tính CSS cho lớp .navbar__btn */
+    .navbar__btn {
+        /* Đặt nền cho nút trở lại thành màu xám */
+        background-color: var(--gray);
+    }
+}
+
+/* === Banner === */
+#banner {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.banner__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.banner__heading {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--gray);
+}
+
+.banner__heading h1{
+    font-size: 2.25rem;
+    padding-top: 4em;
+    margin-bottom: 0.8em;
+}
+
+.banner__heading p {
+    font-weight: 300;
+    line-height: 2em;
+    margin-bottom: 1.5em;
+}
+
+.banner__btn{
+    font-size: 1rem;
+}
+
+.banner__socials{
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+}
+
+.banner__socials a{
+    color: var(--gray);
+    transition: var(--smooth);
+}
+
+.banner__socials a:hover{
+    color: var(--green-l);
+    transition: var(--smooth);
+}
+
+@media (min-width:62em) {
+    .banner__heading{
+        text-align: initial;
+        margin: 0;
+        padding-top: 0;
+    }
+    .banner__socials{
+        justify-content: flex-start;
+    }
+    .banner__socials a {
+        margin-right: 45px;
+    }
+    .banner__img{
+        width: 60%;
+    }
+}

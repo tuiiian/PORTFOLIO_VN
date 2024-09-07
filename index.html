@@ -1,0 +1,110 @@
+<!-- Khai báo loại tài liệu HTML5 -->
+<!doctype html>
+<!-- Đặt ngôn ngữ của tài liệu là tiếng Anh -->
+<html lang="en">
+  <head>
+    <!-- Đặt mã hóa ký tự cho trang web là UTF-8, giúp hiển thị đầy đủ các ký tự đặc biệt và đa ngôn ngữ -->
+    <meta charset="UTF-8" />
+
+    <!-- Thiết lập trang web để phù hợp với mọi thiết bị (responsive). 
+         `width=device-width` làm cho trang web có chiều rộng bằng với chiều rộng thiết bị
+         `initial-scale=1.0` thiết lập mức thu phóng ban đầu là 100% -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Thêm file CSS chính để định dạng style cho trang web -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Thiết lập tiêu đề cho trang web sẽ hiển thị trên tab trình duyệt -->
+    <title>Portfolio</title>
+
+    <!-- Sử dụng thuộc tính defer để đảm bảo rằng tệp JavaScript sẽ được thực thi 
+         sau khi tài liệu HTML đã được phân tích -->
+    <!-- <script src="./js/main.js" defer></script> -->
+
+    <!-- Liên kết Google Fonts -->
+    <!-- Kết nối trước tới Google Fonts để cải thiện thời gian tải -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Thêm font Roboto từ Google Fonts với trọng lượng 300 và 500 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!-- Phần thân của trang -->
+  <body>
+    <!-- Phần đầu trang (Header) -->
+    <header>
+      <!-- Đặt phần tử này vào trong khung với kích thước nhất định và giúp nội dung căn giữa -->
+      <div class="container">
+        <!-- Phần điều hướng (Navigation Bar) -->
+        <nav class="navbar">
+          <!-- Logo của trang web -->
+          <div class="navbar__logo">
+            <!-- Thêm hình ảnh logo, với thuộc tính alt dùng để mô tả hình ảnh (rất hữu ích cho SEO và truy cập người dùng khi hình ảnh không tải được) -->
+            <img src="./img/logo.svg" alt="website logo" />
+          </div>
+
+          <!-- Các liên kết điều hướng -->
+          <ul class="navbar__links">
+            <!-- Các mục trong danh sách điều hướng -->
+            <li class="navbar__link"><a href="#">Work</a></li>
+            <li class="navbar__link"><a href="#">About</a></li>
+            <li class="navbar__link"><a href="#">Resume</a></li>
+            <!-- Nút Contact -->
+            <a href="#"><button class="navbar__btn">Contact</button></a>
+          </ul>
+
+          <!-- Nút menu (Menu button) để hiển thị trên các thiết bị di động -->
+          <div class="navbar__icons">
+            <!-- Thanh menu icon hiển thị dưới dạng hamburger -->
+            <div class="navbar__icon"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Phần Banner -->
+    <section id="banner">
+      <div class="container">
+        <!-- img -->
+        <div class="banner__img">
+          <img src="./img/banner-img.png" alt="illustration of women" />
+        </div>
+        <!-- heading -->
+        <div class="banner__heading">
+          <h1>Hello, I'm Tuan</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias
+            itaque voluptatibus corrupti facilis perferendis, quam fugit modi
+            tempore nostrum nisi recusandae in deserunt sunt, dignissimos saepe
+            vero quibusdam inventore. Molestiae.
+          </p>
+          <a href="#"><button class="banner-btn">View More</button></a>
+          <div class="banner__socials">
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phần Things -->
+    <section id="things">
+      <div class="container"></div>
+    </section>
+    <!-- Thư viện FontAwesome -->
+    <!-- Liên kết thư viện FontAwesome để sử dụng các icon trên trang web -->
+    <script
+      src="https://kit.fontawesome.com/1b91c88992.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Tập lệnh JavaScript chính -->
+    <!-- Liên kết đến file JavaScript chính để xử lý sự kiện và các tương tác trên trang -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

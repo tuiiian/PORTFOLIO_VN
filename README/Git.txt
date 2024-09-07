@@ -1,0 +1,50 @@
+Khởi tạo và cấu hình Git
+
+	•	git init: Khởi tạo một repository Git mới trong thư mục hiện tại.
+	•	git clone [URL]: Sao chép một repository từ xa về máy tính cục bộ.
+	•	git config --global user.name "[Tên của bạn]": Thiết lập tên người dùng toàn cục.
+	•	git config --global user.email "[Email của bạn]": Thiết lập email người dùng toàn cục.
+
+Làm việc với các thay đổi (Staging và Commit)
+
+	•	git status: Kiểm tra trạng thái hiện tại của repository.
+	•	git add [file]: Thêm một file cụ thể vào khu vực staging.
+	•	git add .: Thêm tất cả các thay đổi vào khu vực staging.
+	•	git commit -m "[Thông điệp commit]": Tạo một commit với thông điệp miêu tả thay đổi.
+	•	git commit -am "[Thông điệp commit]": Tự động stage tất cả các thay đổi và commit.
+
+Làm việc với nhánh (Branches)
+
+	•	git branch: Liệt kê tất cả các nhánh trong repository.
+	•	git branch [tên-nhánh]: Tạo một nhánh mới.
+	•	git checkout [tên-nhánh]: Chuyển sang nhánh khác.
+	•	git checkout -b [tên-nhánh]: Tạo và chuyển sang nhánh mới.
+	•	git merge [tên-nhánh]: Hợp nhất nhánh chỉ định vào nhánh hiện tại.
+	•	git branch -d [tên-nhánh]: Xóa một nhánh đã hợp nhất.
+
+Làm việc với Remote Repository
+
+	•	git remote add origin [URL]: Liên kết repository cục bộ với một remote repository.
+	•	git push -u origin [tên-nhánh]: Đẩy nhánh cục bộ lên remote lần đầu tiên và thiết lập nhánh theo dõi.
+	•	git push: Đẩy các thay đổi đã commit lên remote repository.
+	•	git pull: Kéo các thay đổi từ remote repository về và hợp nhất vào nhánh hiện tại.
+	•	git fetch: Lấy các thay đổi từ remote repository nhưng không hợp nhất.
+
+Lịch sử Commit
+
+	•	git log: Hiển thị lịch sử commit.
+	•	git log --oneline: Hiển thị lịch sử commit ngắn gọn.
+	•	git log --graph --oneline --all: Hiển thị lịch sử commit dưới dạng biểu đồ đơn giản.
+
+Undo Changes
+
+	•	git reset [file]: Bỏ stage một file, nhưng giữ lại thay đổi trong thư mục làm việc.
+	•	git checkout -- [file]: Khôi phục file về trạng thái của lần commit cuối.
+	•	git revert [mã-commit]: Tạo một commit đảo ngược các thay đổi của commit chỉ định.
+
+Khác
+
+	•	git stash: Lưu lại thay đổi tạm thời và làm sạch thư mục làm việc.
+	•	git stash pop: Khôi phục các thay đổi đã lưu từ stash.
+
+Bạn có thể sao chép và dán các lệnh này để sử dụng khi làm việc với Git.

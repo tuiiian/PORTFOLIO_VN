@@ -1,0 +1,73 @@
+Dưới đây là các thẻ HTML chính được sử dụng để tạo cấu trúc và định dạng nội dung trang web:
+Hello My name is tuan
+1. Thẻ cấu trúc (Structural Tags)
+
+	•	<html>: Thẻ gốc của tài liệu HTML. Tất cả nội dung của trang web phải nằm trong thẻ này.
+	•	<head>: Chứa thông tin về tài liệu, như tiêu đề trang (<title>), liên kết tới các file CSS và JavaScript, và các meta thông tin khác.
+	•	<body>: Chứa tất cả nội dung hiển thị trên trang web, như văn bản, hình ảnh, liên kết, và các thẻ HTML khác.
+
+2. Thẻ tiêu đề và đoạn văn (Heading and Paragraph Tags)
+
+	•	<h1> đến <h6>: Các thẻ tiêu đề, từ lớn nhất (<h1>) đến nhỏ nhất (<h6>), được sử dụng để xác định các tiêu đề và tiêu đề phụ.
+	•	<p>: Thẻ đoạn văn, dùng để chứa văn bản.
+
+3. Thẻ định dạng văn bản (Text Formatting Tags)
+
+	•	<strong>: Hiển thị văn bản in đậm, dùng để nhấn mạnh.
+	•	<em>: Hiển thị văn bản in nghiêng, dùng để nhấn mạnh.
+	•	<b>: Hiển thị văn bản in đậm (không mang ý nghĩa mạnh mẽ như <strong>).
+	•	<i>: Hiển thị văn bản in nghiêng (không mang ý nghĩa nhấn mạnh như <em>).
+	•	<br>: Thẻ xuống dòng.
+	•	<hr>: Thẻ đường kẻ ngang, thường được dùng để phân tách nội dung.
+
+4. Thẻ liên kết và danh sách (Link and List Tags)
+
+	•	<a>: Thẻ liên kết, dùng để tạo các liên kết đến các trang web khác hoặc phần khác trong cùng trang.
+	•	<ul>, <ol>: Thẻ danh sách không thứ tự (<ul>) và có thứ tự (<ol>).
+	•	<li>: Thẻ danh sách con, dùng để liệt kê các mục trong danh sách.
+
+5. Thẻ hình ảnh và đa phương tiện (Image and Multimedia Tags)
+
+	•	<img>: Thẻ hình ảnh, dùng để chèn hình ảnh vào trang web.
+	•	<audio>: Thẻ âm thanh, dùng để nhúng âm thanh.
+	•	<video>: Thẻ video, dùng để nhúng video.
+
+6. Thẻ bảng (Table Tags)
+
+	•	<table>: Định nghĩa một bảng.
+	•	<tr>: Định nghĩa một hàng trong bảng.
+	•	<th>: Định nghĩa một ô tiêu đề trong bảng.
+	•	<td>: Định nghĩa một ô dữ liệu trong bảng.
+
+7. Thẻ biểu mẫu (Form Tags)
+
+	•	<form>: Định nghĩa một biểu mẫu để thu thập thông tin từ người dùng.
+	•	<input>: Thẻ nhập liệu, dùng để tạo các trường nhập liệu như văn bản, mật khẩu, email, v.v.
+	•	<label>: Liên kết nhãn với một phần tử nhập liệu trong biểu mẫu.
+	•	<button>: Thẻ nút, dùng để tạo nút bấm.
+	•	<textarea>: Thẻ nhập liệu nhiều dòng.
+	•	<select>: Thẻ danh sách thả xuống, dùng để chọn một hoặc nhiều tùy chọn.
+
+8. Thẻ phân chia nội dung (Sectioning Tags)
+
+	•	<header>: Định nghĩa phần đầu của một tài liệu hoặc một phần.
+	•	<footer>: Định nghĩa phần chân của một tài liệu hoặc một phần.
+	•	<section>: Định nghĩa một phần nội dung.
+	•	<article>: Định nghĩa một nội dung độc lập, như bài viết hay blog.
+	•	<aside>: Định nghĩa nội dung bên lề, thường là thanh bên (sidebar).
+	•	<nav>: Định nghĩa một vùng chứa các liên kết điều hướng.
+
+9. Thẻ ngữ nghĩa khác (Other Semantic Tags)
+
+	•	<main>: Định nghĩa nội dung chính của trang.
+	•	<figure>: Định nghĩa nội dung minh họa như hình ảnh, biểu đồ.
+	•	<figcaption>: Định nghĩa chú thích cho thẻ <figure>.
+	•	<div>: Thẻ phân chia, dùng để nhóm các phần tử lại với nhau.
+	•	<span>: Thẻ nội tuyến, dùng để nhóm các phần tử nhỏ hơn như văn bản.
+
+10. Thẻ kịch bản và phong cách (Script and Style Tags)
+
+	•	<style>: Định nghĩa kiểu CSS nội tuyến.
+	•	<script>: Định nghĩa mã JavaScript nội tuyến hoặc liên kết tới file JavaScript bên ngoài.
+
+Những thẻ này là nền tảng của HTML và được sử dụng rộng rãi để xây dựng cấu trúc và nội dung của một trang web.
